@@ -26,6 +26,9 @@ export default function (eleventyConfig) {
   // somewhere else (e.g. images/) and be referenced normally.
   eleventyConfig.addPassthroughCopy("static");
 
+  // Brand assets, icons, and SVGs served under /assets/
+  eleventyConfig.addPassthroughCopy("assets");
+
   return {
     pathPrefix: process.env.PATH_PREFIX || "/",
   };

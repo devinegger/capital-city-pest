@@ -3,8 +3,8 @@
 <head>
   <meta charset="utf-8">
   <meta name="viewport" content="width=device-width, initial-scale=1">
-  <title>{% if title %}{{ title }} | {% endif %}{{ site.name | default: "Capitol City Pest Solutions" }}</title>
-  <meta name="description" content="{{ description | default: site.description }}">
+  <title>{{ title }} | {{ site.name | default: "Capitol City Pest Solutions" }}</title>
+  <meta name="description" content="{{ description }}">
   <link rel="stylesheet" href="/styles.css">
 </head>
 <body>
@@ -20,7 +20,7 @@
     </a>
     <nav class="site-nav" aria-label="Primary">
       <a href="/" class="nav-link">Home</a>
-      <a href="/services/" class="nav-link">Services</a>
+      <a href="/services/" class="nav-link is-current">Services</a>
       <a href="/about/" class="nav-link">About</a>
       <a href="/service-areas/" class="nav-link">Service Areas</a>
       <a href="/contact/" class="nav-link">Contact</a>
@@ -35,30 +35,77 @@
   </div>
 </header>
 
-<div class="inner-hero">
+<section class="service-detail">
   <div class="shell">
-    <div class="inner-hero-rule">
-      <span class="eyebrow inner-hero-eyebrow">{{ eyebrow | default: "Capitol City Pest Solutions" }}</span>
-      <h1>{{ title | default: site.name }}</h1>
-      {% if description %}<p class="lead">{{ description }}</p>{% endif %}
-    </div>
-  </div>
-</div>
+    <a href="/services/" class="link-back">← Back to services</a>
 
-<div class="inner-content">
-  <div class="shell">
-    <div class="prose">
-      {{ content }}
+    <header class="detail-header">
+      <div>
+        <span class="eyebrow">{{ eyebrow | default: "Service" }}</span>
+        <h1 class="detail-title">{{ title }}</h1>
+        <p class="lead detail-lede">{{ description }}</p>
+      </div>
+      {% if icon %}
+      <div class="detail-icon-card">
+        <img src="/assets/icons/services/{{ icon }}.svg" width="64" height="64" alt="">
+      </div>
+      {% endif %}
+    </header>
+
+    {% if stats %}
+    <dl class="stat-strip">
+      {% for stat in stats %}
+      <div class="stat-strip-item">
+        <dt>{{ stat.label }}</dt>
+        <dd>{{ stat.value }}</dd>
+      </div>
+      {% endfor %}
+    </dl>
+    {% endif %}
+
+    <div class="detail-grid">
+      <div class="rule-block">
+        <span class="eyebrow">Our methods</span>
+        <h2>How we handle it</h2>
+        <div class="detail-body">
+          {{ content }}
+        </div>
+      </div>
+
+      <aside class="detail-aside">
+        {% if signs %}
+        <div class="aside-block">
+          <span class="eyebrow">Signs you have it</span>
+          <ul class="check-list">
+            {% for sign in signs %}
+            <li>
+              <svg class="chk" viewBox="0 0 24 24" width="14" height="14" fill="none" stroke="currentColor" stroke-width="2.5" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true"><polyline points="20 6 9 17 4 12"/></svg>
+              {{ sign }}
+            </li>
+            {% endfor %}
+          </ul>
+        </div>
+        {% endif %}
+
+        {% if timeline %}
+        <div class="aside-quote">
+          <p class="quote-body">"{{ timeline }}"</p>
+          <span class="quote-attr">— Typical timeline</span>
+        </div>
+        {% endif %}
+
+        <a href="/contact/" class="btn btn-cta btn-block">Book an inspection <span class="arr">→</span></a>
+      </aside>
     </div>
   </div>
-</div>
+</section>
 
 <section class="contact-cta">
   <div class="shell contact-grid">
     <div class="contact-info">
       <span class="eyebrow">Get in touch</span>
       <h2 class="contact-title">Get a free quote.</h2>
-      <p class="lead">We're happy to answer questions, schedule an inspection, or give you a ballpark estimate over the phone.</p>
+      <p class="lead">Questions about {{ title | downcase }}? We're happy to answer them or schedule an inspection.</p>
       <dl class="contact-meta">
         <div class="contact-meta-row"><dt>Phone</dt><dd class="mono"><a href="tel:5155550174">(515) 555-0174</a></dd></div>
         <div class="contact-meta-row"><dt>Email</dt><dd class="mono"><a href="mailto:hello@capital-city-pest.example">hello@capital-city-pest.example</a></dd></div>
@@ -74,14 +121,14 @@
     </div>
     <form class="contact-form" action="/contact/" method="POST">
       <span class="form-eyebrow">Quote request</span>
-      <div class="field"><label for="name-b">Full name</label><input id="name-b" name="name" placeholder="Your name" required></div>
+      <div class="field"><label for="name">Full name</label><input id="name" name="name" placeholder="Your name" required></div>
       <div class="form-row-2">
-        <div class="field"><label for="phone-b">Phone</label><input id="phone-b" name="phone" inputmode="tel" placeholder="(515) 555-0174" class="mono"></div>
-        <div class="field"><label for="zip-b">ZIP code</label><input id="zip-b" name="zip" inputmode="numeric" placeholder="50309" class="mono"></div>
+        <div class="field"><label for="phone">Phone</label><input id="phone" name="phone" inputmode="tel" placeholder="(515) 555-0174" class="mono"></div>
+        <div class="field"><label for="zip">ZIP code</label><input id="zip" name="zip" inputmode="numeric" placeholder="50309" class="mono"></div>
       </div>
       <div class="field">
-        <label for="service-b">What are you seeing?</label>
-        <select id="service-b" name="service">
+        <label for="service">What are you seeing?</label>
+        <select id="service" name="service">
           <option value="general">General pest control</option>
           <option value="rodent">Rodent control</option>
           <option value="termite">Termite treatment</option>
@@ -91,8 +138,8 @@
         </select>
       </div>
       <div class="field">
-        <label for="notes-b">Anything else? <span class="optional">(optional)</span></label>
-        <textarea id="notes-b" name="notes" rows="3" placeholder="When did you first notice it? Where in the home?"></textarea>
+        <label for="notes">Anything else? <span class="optional">(optional)</span></label>
+        <textarea id="notes" name="notes" rows="3" placeholder="When did you first notice it? Where in the home?"></textarea>
       </div>
       <button type="submit" class="btn btn-cta btn-block btn-lg">Request my free quote <span class="arr">→</span></button>
       <p class="form-fineprint">We'll never share your info. You'll get a written quote — no surprise charges.</p>

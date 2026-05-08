@@ -1,0 +1,9 @@
+<svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 320 64" width="320" height="64" role="img" aria-label="Capitol City Pest Solutions">
+  <rect width="64" height="64" rx="6" fill="#0F3D2E"></rect>
+  <text x="32" y="29" fill="#FAFAF7" font-family="Geist, system-ui, sans-serif" font-weight="700" font-size="22" letter-spacing="-0.02em" text-anchor="middle">CCP</text>
+  <rect x="14" y="38" width="36" height="2" fill="#D97706"></rect>
+  <text x="32" y="52" fill="#FAFAF7" font-family="Geist Mono, ui-monospace, monospace" font-size="6" letter-spacing="0.18em" text-anchor="middle" font-weight="500">DES MOINES</text>
+
+  <text x="80" y="30" fill="#0B0F0E" font-family="Geist, system-ui, sans-serif" font-weight="700" font-size="22" letter-spacing="-0.02em">Capitol City Pest</text>
+  <text x="80" y="50" fill="#6B7572" font-family="Geist Mono, ui-monospace, monospace" font-weight="500" font-size="11" letter-spacing="0.06em">SOLUTIONS · DES MOINES, IA</text>
+</svg>
