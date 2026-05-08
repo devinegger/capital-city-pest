@@ -1,20 +1,16 @@
 ---
-title: Home
-description: Des Moines' trusted pest control — fast response, lasting results.
+title: Pest Control Services
+description: Full-service pest control for homes and businesses throughout Des Moines, IA.
 layout: base.liquid
 ---
 
-## Protect Your Home or Business from Unwanted Pests
-
-Capitol City Pest Solutions has served the greater Des Moines area for over a decade. Whether you're dealing with a one-time invasion or need year-round protection, our licensed technicians get the job done safely and effectively.
-
-## Our Services
+We offer a full range of pest control services tailored to Iowa's climate and the specific pests that thrive here. Every service starts with a thorough inspection and ends with a clear prevention plan.
 
 <ul class="section-list">
   <li>
     <a href="/services/general-pest-control/">
       <strong>General Pest Control</strong>
-      Interior and exterior treatment for common household pests.
+      Interior and exterior treatment for ants, spiders, cockroaches, and more.
     </a>
   </li>
   <li>
@@ -43,4 +39,4 @@ Capitol City Pest Solutions has served the greater Des Moines area for over a de
   </li>
 </ul>
 
-[Get a free quote today &rarr;](/contact/)
+Not sure what you're dealing with? [Contact us](/contact/) and we'll help identify the pest and recommend the right treatment.
