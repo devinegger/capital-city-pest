@@ -1,6 +1,9 @@
 ---
 title: Home
+hero_title: "Pest Problems, Eliminated."
 description: Des Moines' trusted pest control — fast response, lasting results.
+cta_text: "Get a Free Quote"
+cta_url: "/contact/"
 layout: base.liquid
 ---
 

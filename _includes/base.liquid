@@ -3,38 +3,66 @@
   <head>
     <meta charset="utf-8">
     <meta name="viewport" content="width=device-width, initial-scale=1">
-    <title>{% if title %}{{ title }} | {% endif %}{{ site.name | default: "Your Site" }}</title>
+    <title>{% if title and title != "Home" %}{{ title }} | {% endif %}{{ site.name | default: "Your Site" }}</title>
+    <meta name="description" content="{{ description | default: site.description }}">
+    <link rel="preconnect" href="https://fonts.googleapis.com">
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+    <link href="https://fonts.googleapis.com/css2?family=Big+Shoulders+Display:wght@700;800;900&family=Outfit:wght@300;400;500;600;700&display=swap" rel="stylesheet">
     <link rel="stylesheet" href="/styles.css">
   </head>
   <body>
+
     <header class="site-header">
       <div class="shell">
-        <a class="brand" href="/">{{ site.name | default: "Your Site" }}</a>
+        <a class="brand" href="/">
+          <span class="brand-dot" aria-hidden="true"></span>
+          {{ site.name | default: "Your Site" }}
+        </a>
         <nav class="site-nav" aria-label="Primary">
           <a href="/">Home</a>
           <a href="/services/">Services</a>
           <a href="/about/">About</a>
           <a href="/service-areas/">Service Areas</a>
-          <a href="/contact/">Contact</a>
+          <a href="/contact/" class="nav-cta">Get a Quote</a>
         </nav>
+        <button class="nav-toggle" aria-label="Open navigation" aria-expanded="false" aria-controls="mobile-nav">
+          <span></span><span></span><span></span>
+        </button>
       </div>
+      <nav class="mobile-nav" id="mobile-nav" aria-label="Mobile navigation" hidden>
+        <a href="/">Home</a>
+        <a href="/services/">Services</a>
+        <a href="/about/">About</a>
+        <a href="/service-areas/">Service Areas</a>
+        <a href="/contact/">Get a Quote &rarr;</a>
+      </nav>
     </header>
 
     <main>
       <section class="hero">
         <div class="shell">
-          <div class="hero-card">
-            <h1>{{ title | default: site.name | default: "Your Site" }}</h1>
-            <div class="hero-copy">
-              {{ description | default: "A Markdown-first site built with Eleventy." }}
-            </div>
+          {% if eyebrow %}<p class="eyebrow">{{ eyebrow }}</p>{% endif %}
+          <h1>{{ hero_title | default: title | default: site.name | default: "Your Site" }}</h1>
+          <p class="hero-desc">{{ description | default: site.description }}</p>
+          {% if cta_text %}
+          <a href="{{ cta_url | default: '/contact/' }}" class="btn-primary">{{ cta_text }}</a>
+          {% endif %}
+        </div>
+        <div class="trust-strip">
+          <div class="shell">
+            <ul class="trust-list">
+              <li>10+ Years Serving Des Moines</li>
+              <li>Licensed &amp; Insured</li>
+              <li>Same-Day Service Available</li>
+              <li>100% Satisfaction Guarantee</li>
+            </ul>
           </div>
         </div>
       </section>
 
       <section class="content">
         <div class="shell">
-          <article class="content-card">
+          <article class="content-body">
             {{ content }}
           </article>
         </div>
@@ -43,8 +71,52 @@
 
     <footer class="site-footer">
       <div class="shell">
-        <p class="meta-note">Edit Markdown files and keep parent <code>index.md</code> links current.</p>
+        <div class="footer-grid">
+
+          <div class="footer-brand">
+            <a class="brand" href="/">
+              <span class="brand-dot" aria-hidden="true"></span>
+              {{ site.name | default: "Your Site" }}
+            </a>
+            <p>{{ site.description }}</p>
+          </div>
+
+          <nav class="footer-nav" aria-label="Footer">
+            <p class="footer-col-label">Navigate</p>
+            <a href="/">Home</a>
+            <a href="/services/">Services</a>
+            <a href="/about/">About</a>
+            <a href="/service-areas/">Service Areas</a>
+            <a href="/contact/">Contact</a>
+          </nav>
+
+          <div class="footer-contact">
+            <p class="footer-col-label">Contact</p>
+            {% if site.phone %}<a href="tel:{{ site.phone_uri | default: site.phone }}">{{ site.phone }}</a>{% endif %}
+            {% if site.email %}<a href="mailto:{{ site.email }}">{{ site.email }}</a>{% endif %}
+            {% if site.address %}<address>{{ site.address }}</address>{% endif %}
+            <a href="/contact/" class="btn-outline">Free Inspection &rarr;</a>
+          </div>
+
+        </div>
+        <div class="footer-bottom">
+          <p>&copy; {{ 'now' | date: '%Y' }} {{ site.name }}. All rights reserved.</p>
+        </div>
       </div>
     </footer>
+
+    <script>
+      (function () {
+        var toggle = document.querySelector('.nav-toggle');
+        var nav = document.getElementById('mobile-nav');
+        if (!toggle || !nav) return;
+        toggle.addEventListener('click', function () {
+          var isHidden = nav.hidden;
+          nav.hidden = !isHidden;
+          toggle.setAttribute('aria-expanded', String(isHidden));
+        });
+      })();
+    </script>
+
   </body>
 </html>
