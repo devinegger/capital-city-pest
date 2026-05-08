@@ -2,6 +2,7 @@
 title: Pest Control Services
 description: Full-service pest control for homes and businesses throughout Des Moines, IA.
 layout: base.liquid
+eyebrow: "Services"
 ---
 
 We offer a full range of pest control services tailored to Iowa's climate and the specific pests that thrive here. Every service starts with a thorough inspection and ends with a clear prevention plan.

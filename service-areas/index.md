@@ -2,6 +2,7 @@
 title: Service Areas
 description: Capitol City Pest Solutions serves Des Moines and the surrounding communities in central Iowa.
 layout: base.liquid
+eyebrow: "Where we work"
 ---
 
 ## Serving Greater Des Moines and Central Iowa

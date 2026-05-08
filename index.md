@@ -1,7 +1,5 @@
 ---
-title: Home
-description: Des Moines' trusted pest control — fast response, lasting results.
-layout: base.liquid
+layout: home.liquid
 ---
 
 ## Protect Your Home or Business from Unwanted Pests

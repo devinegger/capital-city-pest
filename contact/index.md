@@ -2,6 +2,7 @@
 title: Contact Us
 description: Get in touch with Capitol City Pest Solutions for a free pest control quote in Des Moines, IA.
 layout: base.liquid
+eyebrow: "Get in touch"
 ---
 
 ## Get a Free Quote

@@ -2,6 +2,7 @@
 title: About Us
 description: Meet the team behind Capitol City Pest Solutions, Des Moines' trusted local pest control company.
 layout: base.liquid
+eyebrow: "Company"
 ---
 
 ## Local Expertise. Real Results.

@@ -1,29 +1,31 @@
 ---
 title: Termite Treatment
-description: Liquid barrier and baiting systems to protect your Des Moines home from termite damage.
-layout: base.liquid
+description: Eastern subterranean termites are the most destructive pest in Iowa, and they're active in Des Moines. Most homeowners don't know they have a problem until visible damage appears — by then, repair costs can run into the thousands.
+layout: service-detail.liquid
+eyebrow: "Service · termite"
+icon: termite
+stats:
+  - value: "1 yr"
+    label: "Warranty"
+  - value: "2"
+    label: "System types"
+  - value: "60–90 days"
+    label: "Colony elimination"
+signs:
+  - "Mud tubes on foundation walls, piers, or crawl spaces"
+  - "Discarded wings near windowsills or doorways in spring"
+  - "Hollow-sounding wood when tapped"
+  - "Blistered or darkened wood flooring"
+  - "Visible damage in wood framing, beams, or joists"
+timeline: "Liquid barrier treatment is applied in one visit. Bait station systems require monitoring visits every 3–6 months. Annual inspection recommended for ongoing protection."
 ---
 
-## Don't Let Termites Eat Away at Your Investment
+**Liquid barrier treatment**
 
-Eastern subterranean termites are the most destructive pest in Iowa, and they're active in Des Moines. Most homeowners don't know they have a problem until visible damage appears — by then, repair costs can run into the thousands.
+We trench and treat the soil around your foundation with a non-repellent termiticide. Termites pass through the treated zone, pick up the active ingredient, and spread it through the colony — eliminating it at the source. This is our most comprehensive single-treatment option.
 
-## Treatment Options
+**Baiting system**
 
-**Liquid Barrier Treatment**
-We trench and treat the soil around your foundation with a non-repellent termiticide. Termites pass through the treated zone, pick up the active ingredient, and spread it through the colony — eliminating it at the source.
-
-**Baiting System**
-In-ground bait stations are placed around the perimeter of the home. Termites feed on the bait and carry it back to the colony. This option is ideal for homes near wells or with landscaping concerns.
-
-We'll recommend the right approach after your inspection.
-
-## What to Expect
-
-- **Inspection:** 30–45 minutes to assess activity, entry points, and moisture conditions
-- **Treatment:** Liquid treatment takes 2–4 hours depending on foundation size. Bait installation is about 1 hour.
-- **Results:** Liquid barriers begin working immediately. Baiting systems typically show colony elimination within 60–90 days.
+In-ground bait stations are placed around the perimeter of the home. Termites feed on the bait and carry it back to the colony. This option is ideal for homes near wells or with landscaping concerns. Colony elimination typically occurs within 60–90 days.
 
 All termite treatments come with a one-year renewable warranty.
-
-[Get a termite inspection &rarr;](/contact/)
