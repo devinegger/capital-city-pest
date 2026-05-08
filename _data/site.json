@@ -1,4 +1,8 @@
 {
   "name": "Capitol City Pest Solutions",
-  "description": "Reliable pest control for homes and businesses in Des Moines, IA."
+  "description": "Reliable pest control for homes and businesses in Des Moines, IA.",
+  "phone": "(515) 555-0174",
+  "phone_uri": "5155550174",
+  "email": "hello@capital-city-pest.example",
+  "address": "412 Elm Street\nDes Moines, IA 50309"
 }
